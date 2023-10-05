@@ -1,0 +1,10 @@
+FROM node:lts-slim AS build
+RUN npm install -g @angular/cli
+WORKDIR /angular-maplibre
+COPY ./angular-maplibre /angular-maplibre
+RUN npm i && ng build
+
+FROM nginx:alpine
+COPY --from=build /angular-maplibre/dist/app/ /usr/share/nginx/html
+EXPOSE 80
+CMD ["nginx", "-g", "daemon off;"]

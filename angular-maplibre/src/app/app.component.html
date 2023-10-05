@@ -1,0 +1,17 @@
+<mat-toolbar color="primary" class="mat-elevation-z1">
+  Angular Maplibre
+</mat-toolbar>
+<div fxLayout="row" *ngIf="window$ | async as window">
+  <div
+    [fxFlex]="window.innerWidth > 1000 ? '30%' : '30%'"
+    [style.padding]="'10px'"
+  >
+    <app-panel></app-panel>
+  </div>
+  <div
+    [fxFlex]="window.innerWidth > 1000 ? '70%' : '70%'"
+    [style.padding]="'10px 10px 10px 0px'"
+  >
+    <app-map></app-map>
+  </div>
+</div>

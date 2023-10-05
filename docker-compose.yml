@@ -1,0 +1,17 @@
+version: "3.7"
+volumes:
+  node_modules:
+  angular:
+services:
+  angular-maplibre:
+    restart: always
+    container_name: angular-maplibre
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    ports:
+      - 4200:4200
+    volumes:
+      - ./angular-maplibre:/angular-maplibre
+      - node_modules:/angular-maplibre/node_modules
+      - angular:/angular-maplibre/.angular

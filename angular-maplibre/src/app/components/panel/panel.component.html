@@ -1,0 +1,16 @@
+<mat-card class="card" style="overflow-y: auto; height: 100%">
+  <mat-card-content style="height: 100%" *ngIf="vm$ | async as vm">
+    <div fxLayout="row" class="easy-font" fxLayoutAlign="left">
+      <div>
+        <mat-icon style="font-size: 20px">near_me</mat-icon>
+      </div>
+      <div>Coordinate X: {{ vm.clickedCoordinates[0] }}</div>
+    </div>
+    <div fxLayout="row" class="easy-font" fxLayoutAlign="left">
+      <div>
+        <mat-icon style="font-size: 20px">near_me</mat-icon>
+      </div>
+      <div>Coordinate Y: {{ vm.clickedCoordinates[1] }}</div>
+    </div>
+  </mat-card-content>
+</mat-card>
